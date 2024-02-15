@@ -1,0 +1,16 @@
+<h1>
+  <%= @meeting.name %>
+</h1>
+<h2>Details</h2>
+<ul>
+<li>Happening at: <%= local_time(@meeting.happening_at) %></li>
+<li>Details: Come join the Hackworthy Hack Club this Thursday </li>
+</ul>
+
+<% if !checked_in(@meeting.id, @member.id) %>
+  <%= form_with url: meeting_check_ins_path(params[:id]), method: :post do |form| %>
+    <%= form.submit "Check-in" %>
+  <% end %>
+<% else %>
+  <p>You are checked in!<p>
+<% end %>

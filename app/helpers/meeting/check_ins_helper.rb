@@ -1,0 +1,2 @@
+module Meeting::CheckInsHelper
+end

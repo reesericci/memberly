@@ -1,0 +1,8 @@
+<h1>👋 Hello, <%= @member.nil? ? "nil" : @member.name %></h1>
+
+
+<h2>Next meeting</h2>
+<!-- FIXME: make turbo frame loading from MeetingsController -->
+<%= link_to meeting_path(@next_meeting) do %>
+  <%= @next_meeting.name %> -- <%= local_time(@next_meeting.happening_at) %>
+<% end %>
